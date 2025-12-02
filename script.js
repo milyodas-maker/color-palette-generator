@@ -51,21 +51,18 @@ function generatePalette() {
 
     // أ. تحديد درجات الألوان (Hues) بناءً على النظام المختار
     if (schemeType === 'complementary') {
-        // الألوان المُكمّلة: نحتاج درجتين (0 و 180)
         generatedHues = [baseH, (baseH + 180) % 360];
     } else if (schemeType === 'analogous') {
-        // الألوان المتشابهة: نحتاج ثلاث درجات (-30, 0, +30)
         generatedHues = [
             (baseH - 30 + 360) % 360, 
             baseH,                     
             (baseH + 30) % 360         
         ];
     } else { // Monochromatic (Default)
-        // الألوان الأحادية اللون: نحتاج درجة واحدة فقط
         generatedHues = [baseH];
     }
 
-    // القيم التي نستخدمها لـ L و S لملء 5 مربعات (تضمن التباين)
+    // قيم L و S لملء 5 مربعات (تضمن التباين)
     const lValues = [85, 65, 50, 40, 30]; 
     const sValues = [75, 85, 95, 80, 70]; 
     
@@ -73,7 +70,6 @@ function generatePalette() {
     let hueIndex = 0;
 
     for (let i = 0; i < 5; i++) {
-        // نستخدم عامل القسمة % numHues لضمان التدوير بين درجات اللون المتاحة (1 أو 2 أو 3)
         const currentHue = generatedHues[hueIndex % numHues]; 
         
         colorAdjustments.push({
@@ -84,7 +80,6 @@ function generatePalette() {
         
         hueIndex++;
     }
-
 
     const colorBoxes = document.querySelectorAll('.color-box');
     
