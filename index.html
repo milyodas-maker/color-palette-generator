@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مُولّد لوحات الألوان الاحترافي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 مُولّد لوحات الألوان للأنيمي</h1>
+        
+        <label for="baseColor">اختر اللون الأساسي:</label>
+        <input type="color" id="baseColor" value="#4A90E2">
+        
+        <br><br>
+        
+        <label for="schemeType">اختر نوع اللوحة:</label>
+        <select id="schemeType">
+            <option value="mono">أحادية اللون (Monochromatic)</option>
+            <option value="complementary">مُكمّلة (Complementary)</option>
+            <option value="analogous">متشابهة (Analogous)</option>
+        </select>
+
+        <button onclick="generatePalette()">توليد اللوحة</button>
+        
+        <hr>
+
+        <h2>اللوحة المُولّدة (اضغط لنسخ الرمز):</h2>
+        <div id="paletteContainer">
+            <div class="color-box" data-index="0"></div>
+            <div class="color-box" data-index="1"></div>
+            <div class="color-box" data-index="2"></div>
+            <div class="color-box" data-index="3"></div>
+            <div class="color-box" data-index="4"></div>
+        </div>
+        
+        <p id="message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
