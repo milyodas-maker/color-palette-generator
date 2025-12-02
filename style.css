@@ -73,5 +73,5 @@ button:hover {
 }
 
 .color-box:hover {
-    transform: scale(1.03); /* تأثير عند مرور الفأرة */
+    transform: scale(1.03); 
 }
